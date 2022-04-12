@@ -1,4 +1,4 @@
-import { ADD_TODO, ADD_TODOS } from "../actions/todo_actions";
+import { ADD_TODO, ADD_TODOS, REMOVE_TODO } from "../actions/todo_actions";
 
 const initialState = {
   1: {
@@ -21,19 +21,18 @@ export const todosReducer = (state = initialState, action) => {
 
   switch(action.type){
     case ADD_TODO:
-      debugger;
       nextState[action.todo.id] = action.todo;
       return nextState;
     case ADD_TODOS:
-      const allTodos = {};
-      // debugger;
-      action.todos.map((item, idx) => {
-        allTodos[idx] = item;
+      // const allTodos = {};
+      action.todos.map((item) => {
+        nextState[item.id] = item;
       });
+      return nextState;
+    case REMOVE_TODO:
       debugger;
-      // const finalState = Object.assign({}, allTodos);
-      // nextState[1]= allTodos;
-      return allTodos;
+      delete nextState[action.id];
+      return nextState;
     default:
       return state;
   }
