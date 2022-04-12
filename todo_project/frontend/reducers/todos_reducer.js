@@ -21,6 +21,7 @@ export const todosReducer = (state = initialState, action) => {
 
   switch(action.type){
     case ADD_TODO:
+      debugger;
       nextState[action.todo.id] = action.todo;
       return nextState;
     case ADD_TODOS:
@@ -30,8 +31,7 @@ export const todosReducer = (state = initialState, action) => {
       });
       return nextState;
     case REMOVE_TODO:
-      debugger;
-      delete nextState[action.id];
+      delete nextState[action.todo.id];
       return nextState;
     default:
       return state;
