@@ -21,7 +21,6 @@ export const todosReducer = (state = initialState, action) => {
 
   switch(action.type){
     case ADD_TODO:
-      debugger;
       nextState[action.todo.id] = action.todo;
       return nextState;
     case ADD_TODOS:
