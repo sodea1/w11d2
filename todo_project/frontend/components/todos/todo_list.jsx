@@ -9,7 +9,7 @@ const TodoList = (props) => {
         {props.todos.map(todo => <li key={todo.id}>Title: {todo.title} Body: {todo.body} Done: {todo.done.toString()}</li>)}
       </ul>
 
-      <TodoForm />
+      <TodoForm addTodo={props.addTodo}/>
     </>
   )
 };
