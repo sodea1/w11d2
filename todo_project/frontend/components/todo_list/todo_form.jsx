@@ -1,14 +1,15 @@
 import React from "react";
 import { addTodo } from "../../actions/todo_actions";
+import uniqueId from "../../../some_util";
 
 class TodoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      id: Math.floor(Math.random() * 1000), 
+      id: uniqueId(), 
       title: "", 
       body: "", 
-      done: false 
+      done: ""
     }
     this.updateTitle = this.updateTitle.bind(this);
     this.updateBody = this.updateBody.bind(this);
@@ -30,14 +31,15 @@ class TodoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     this.props.addTodo(this.state)
+    document.getElementById("radio-button").setAttribute('checked',"false");
     this.setState({
       id: Math.floor(Math.random() * 1000), 
       title: "", 
       body: "", 
-      done: false 
+      done: ""
     })
+
   }
 
   render() {
@@ -46,16 +48,21 @@ class TodoForm extends React.Component {
         <label>Title
           <input type="text" onChange={this.updateTitle} value={this.state.title}/>
         </label>
-
+        <br />
         <label>Body
           <input type="text" onChange={this.updateBody} value={this.state.body}/>
         </label>
-
-        <label>Status
-          <input type="radio" name="radio" onChange={this.updateStatus} value={this.state.done.toString()}/>
-          <input type="radio" name="radio" onChange={this.updateStatus} value={this.state.done.toString()}/>
+        <br />
+        <label>
+          True
+          <input type="radio" id="radio-button" name="radio" onChange={this.updateStatus} value="true"/> 
         </label>
-
+        <br />
+        <label>
+          False
+          <input type="radio" id="radio-button" name="radio" onChange={this.updateStatus} value="false"/>
+        </label>
+        <br />
         <input type="submit" value="Create Todo" />
       </form>
     )
