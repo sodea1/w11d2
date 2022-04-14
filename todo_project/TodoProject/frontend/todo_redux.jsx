@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { addTodos, addTodo, removeTodo } from "./actions/todo_actions";
+import { addTodos, addTodo, removeTodo, fetchTodos } from "./actions/todo_actions";
 import configureStore from "./store/store";
 import * as steps from "./actions/step_actions";
 import Root from "./components/root";
 import {allTodos} from "./reducers/selectors";
-import { fetchTodos } from "./util/todo_api_util";
+// import { fetchTodos } from "./util/todo_api_util";
 
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.getElementById("main");
