@@ -31,14 +31,15 @@ class TodoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addTodo(this.state)
+    // this.props.addTodo(this.state)
+    this.props.createTodo(this.state);
     document.getElementById("radio-button").setAttribute('checked',"false");
     this.setState({
       id: Math.floor(Math.random() * 1000), 
       title: "", 
       body: "", 
       done: ""
-    })
+    });
 
   }
 

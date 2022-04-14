@@ -20,7 +20,7 @@ class TodoList extends React.Component {
               </li> )}
             </ul>
       
-            <TodoForm addTodo={this.props.addTodo} removeTodo={this.props.removeTodo}/>
+            <TodoForm addTodo={this.props.addTodo} removeTodo={this.props.removeTodo} createTodo={this.props.createTodo}/>
           </>
         )
   }
