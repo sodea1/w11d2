@@ -22,11 +22,11 @@ class TodoForm extends React.Component {
   }
 
   updateBody(e) {
-    this.setState({body: e.target.value})
+    this.setState({body: e.target.value});
   }
 
   updateStatus(e) {
-    this.setState({done: e.target.value})
+    this.setState({done: e.target.value});
   }
 
   handleSubmit(e) {

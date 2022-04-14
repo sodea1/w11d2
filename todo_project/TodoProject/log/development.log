@@ -650,3 +650,31 @@ Processing by Api::TodosController#index as JSON
 Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2022-04-14 17:27:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 492ms (Views: 480.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2022-04-14 17:27:12 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:9
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2022-04-14 17:27:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 514ms (Views: 510.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2022-04-14 17:27:28 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:9
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 1.4ms)
+
+
